@@ -1,0 +1,96 @@
+body{
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: 100;  
+  color:#f9f9f9;
+  background: #333;
+  height: 100%;
+}
+.bgimage{
+  position:fixed;
+  top:0;
+  left:0;
+  background-size: auto;
+  background:#e3a97b;
+  opacity:0.8;
+  z-index:-1;
+}
+h1{
+  font-family: 'Tillana', cursive;
+  font-size:2.5em;
+  margin-left:10%;
+}
+.menu {
+  list-style: none;
+  /*margin-bottom: 2em;*/
+  padding: 0 0 0.5em;
+  /*position: absolute;*/
+  font-family: 'Tillana', cursive;
+  bottom: 1em;
+  width:50%;
+  margin-left:10%;
+}
+.menu li {
+  margin: 2em 1em;
+  display:inline;
+}
+.menu a {
+  color: #f9f9f9;
+  font-size: 2em;
+  text-decoration: none
+}
+.container{
+  width:70%;
+  margin-left:10%;
+}
+.page-slide input , .page-slide select{
+  display: block;
+  padding:0.2em;
+  margin: .5em 0 1em 0;
+  width: 75%;
+  font-size:1em;
+  border: 1px solid #ba8154;
+  border-radius:5px;
+}
+.authenticate{
+  font-size:0.8em;
+   font-family: 'Yantramanav', sans-serif;
+}
+.authenticate button{
+  font-size: 0.8em;
+}
+.message{
+  font-size: 0.5em;
+  color:#AD2109;
+  font-weight: bold;
+}
+button{
+  background: #8a4b13 ;
+  color:#edded3;
+  border:1px solid #edded3;
+  box-shadow: 5px 5px 10px #8a4b13;
+  padding: 0.5em 1.5em;
+  border-radius: 5px;
+  font-size: 1.2em;
+  width:30%;
+}
+#addForm{
+  width:70%;
+  background-color:#edded3;
+  border-radius:5px;
+  border:1px solid #8a4b13;
+  box-shadow: 5px 5px 10px #8a4b13;
+  padding: 1.5em;
+  color:#8a4b13;
+}
+.description{
+  width:50%;
+  color:#8a4b13;
+  font-size: 2em;
+  font-family: 'Tillana', cursive;
+  background-color:#edded3;
+  border-radius:5px;
+  border:1px solid #8a4b13;
+  box-shadow: 5px 5px 10px #8a4b13;
+  padding:1.5em;
+  margin-left:10%;
+}

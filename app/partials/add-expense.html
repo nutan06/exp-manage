@@ -1,0 +1,22 @@
+<nav>
+    <ul class="menu">
+    <li><a href="#/home">Home</a>
+    </li>
+    <li><a href="#/add-expense">Add Expense</a>
+    </li>
+    <li><a href="#/viewsummery">View Summary</a>
+    </li>
+    </ul>
+</nav>
+<h2>Add Expense</h2>
+<form id="addForm" name="addForm" novalidate>
+    <label>Date</label>
+    <input type="date"></input>
+    <label>Category:</label>
+    <select ng-model="expense.category" ng-options="category for category in categories" ng-required="true"></select>
+    <label>Amount:</label>
+    <input required type="number" ng-model="expense.amount"></input>
+    <label>Description:</label>
+    <input type="text" ng-pattern="/^[a-zA-Z 0-9]*$/" ng-model="expense.description"></input>
+    <button ng-disabled="addForm.$pristine || addForm.$dirty && addForm.$invalid" ng-click="submit()">Submit</button>
+</form>

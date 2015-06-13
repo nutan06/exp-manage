@@ -1,0 +1,30 @@
+ <div class="description">
+ <form class="authenticate" 
+        ng-submit="register()"
+        name="register" 
+        novalidate>
+        <h2>Please register here..</h2>
+                <input type="text" name="firstname" placeholder="First Name" ng-required="true">
+                <div ng-messages="register.firstname.$error">
+                <p class="message" ng-message="required">This is a required field</p>
+                </div>
+                <input type="text" name="lastname" placeholder="Last Name" ng-required="true">
+                <div ng-message="register.lastname.$error">
+                <p class="message" ng-message="required">This is a required field</p>
+                </div>                               
+        	<input type="email" name="email" placeholder="Email"
+        	ng-model="user.email" ng-required="true">
+        	<div ng-messages="register.email.$error">
+        		<p class="message" ng-message="required">This is a required field</p>
+        		<p class="message" ng-message="email">Please enter a valid email</p>
+        	</div>
+        	<input type="password" name="password" placeholder="Password"
+        	ng-model="user.password" ng-required="true">
+        	<div ng-messages="register.password.$error">
+        		<p class="message" ng-message="required">This is a required field</p>
+        	</div>
+        	<button type="submit"
+                ng-disabled="register.$pristine||register.$dirty&&register.$invalid">Register</button>
+                <p>or <a href='#/home'>login</a></p>
+        </form>
+        </div>

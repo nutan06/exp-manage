@@ -1,0 +1,36 @@
+
+<div class="description">
+        <p>This is a small application that helps you to maintain daily expenses.</p>
+        <form class="authenticate" 
+        name="authenticate" 
+        novalidate>
+        	<input type="email" 
+        	name="email" 
+        	placeholder="Email"
+        	ng-model="user.email" 
+        	ng-required="true">
+        	<div ng-messages="authenticate.email.$error">
+        		<p class="message" ng-message="required">
+        		This is a required field
+        		</p>
+        		<p class="message" ng-message="email">
+        		Please enter a valid email
+        		</p>
+        	</div>
+        	<input type="password" 
+        	name="password" 
+        	placeholder="Password"
+        	ng-model="user.password" 
+        	ng-required="true">
+        	<div ng-messages="authenticate.password.$error">
+        		<p class="message" ng-message="required">
+        		This is a required field
+        		</p>
+        	</div>
+        	<button ng-disabled="authenticate.$pristine||authenticate.$dirty&&authenticate.$invalid" 
+        	ng-click="login()">
+        	Login
+        	</button>
+        	<p> or <a href="#/register">register</a></p>
+        </form>
+    </div>
