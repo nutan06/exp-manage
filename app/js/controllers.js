@@ -3,23 +3,33 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('HomeCtrl', ['$scope','$location', function($scope,$location) {
-       $scope.login=function(){
-         $location.path('/add-expense');
-       }
-       $scope.register=function(){
-         $location.path('/add-expense');
-       }
+  .controller('HomeCtrl',
+   ['$scope','$location', 
+   function($scope, $location, $firebaseSimpleLogin, Authentication) {
+      $scope.login = function() {
+    Authentication.login($scope.user)
+      .then(function(user) {
+      $location.path('/add-expense');
+    }, function(error) {
+      $scope.message = error.toString();
+    });
+  } 
+
+  $scope.register = function() {
+    Authentication.register($scope.user)
+      .then(function(user) {
+      Authentication.login($scope.user);
+      $location.path('/add-expense');
+    }, function(error) {
+      $scope.message = error.toString();
+    });
+  }  
+
   }])
-  .controller('AddExpenseCtrl', ['$scope', 'categoryList','expService',function($scope, categoryList,expService) {
-        $scope.categories = categoryList;
-            $scope.submit = function() {
-      
-      expService.saveExpense($scope.expense);
-    };
-    }
-])
-  .controller('ViewSummaryCtrl', ['$scope', 'expService',function($scope, expService) {
-       
-    }
-]);
+  
+  .controller('ExpenseCtrl', ['$scope', '$firebase',function(
+    $scope, categoryList, $firebase, $routeParams,
+  $firebaseSimpleLogin, $location, FIREBASE_URL) {
+        
+    }]);
+  

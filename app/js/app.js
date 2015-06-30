@@ -2,15 +2,17 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+var myApp=angular.module('myApp', [
   'ngRoute',
   'ngMessages',
+  'firebase',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
   'myApp.controllers'
 ]).
-config(['$routeProvider', function($routeProvider) {
+constant('FIREBASE_URL','https://expense-management.firebaseio.com/');
+myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
   .when('/', {
   	templateUrl: 'partials/home.html', 
@@ -21,11 +23,11 @@ config(['$routeProvider', function($routeProvider) {
   }).
   when('/add-expense', {
   	templateUrl: 'partials/add-expense.html', 
-  	controller: 'AddExpenseCtrl'
+  	controller: 'ExpenseCtrl'
   }).
   when('/viewsummery', {
   	templateUrl: 'partials/viewsummery.html', 
-  	controller: 'ViewSummaryCtrl'
+  	controller: 'ExpenseCtrl'
   }).
   otherwise({
   	redirectTo: '/'

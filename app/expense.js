@@ -1,0 +1,23 @@
+{
+	"expenses":
+	{
+		"date":2015-06-21194505.844,
+		"category":"House",
+		"amount":2000
+	},
+	{
+		"date":2015-06-20194505.844,
+		"category":"Water/Trash",
+		"amount":30
+	},
+	{
+		"date":2015-06-20194505.844,
+		"category":"Education",
+		"amount":1300
+	},
+	{
+		"date":2015-06-11194505.844,
+		"category":"Fuel",
+		"amount":30
+	}
+}
