@@ -5,31 +5,30 @@
 angular.module('myApp.controllers', [])
   .controller('HomeCtrl',
    ['$scope','$location', 
-   function($scope, $location, $firebaseSimpleLogin, Authentication) {
+   function($scope, $location) {
       $scope.login = function() {
-    Authentication.login($scope.user)
-      .then(function(user) {
-      $location.path('/add-expense');
-    }, function(error) {
-      $scope.message = error.toString();
-    });
+    $location.path('/add-expense');
   } 
 
   $scope.register = function() {
-    Authentication.register($scope.user)
-      .then(function(user) {
-      Authentication.login($scope.user);
-      $location.path('/add-expense');
-    }, function(error) {
-      $scope.message = error.toString();
-    });
+    $location.path('/add-expense');
   }  
 
   }])
   
-  .controller('ExpenseCtrl', ['$scope', '$firebase',function(
-    $scope, categoryList, $firebase, $routeParams,
-  $firebaseSimpleLogin, $location, FIREBASE_URL) {
+  .controller('ExpenseCtrl', ['$scope', 'categoryList',function(
+    $scope, categoryList,$location) {
+        $scope.categories=categoryList;
         
-    }]);
+    }])
+   .controller('ViewSummeryCtrl', ['$scope', '$http', 'categoryList',
+        function($scope,$http,$q, categoryList) {
+            $scope.getExpense=function(){
+              $http.get("expense.js")
+              .success(function(data){
+                $scope.expense=data.expense;
+              });
+            }
+        }
+    ]);
   

@@ -5,14 +5,12 @@
 var myApp=angular.module('myApp', [
   'ngRoute',
   'ngMessages',
-  'firebase',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
   'myApp.controllers'
 ]).
-constant('FIREBASE_URL','https://expense-management.firebaseio.com/');
-myApp.config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', function($routeProvider) {
   $routeProvider
   .when('/', {
   	templateUrl: 'partials/home.html', 
@@ -27,7 +25,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
   }).
   when('/viewsummery', {
   	templateUrl: 'partials/viewsummery.html', 
-  	controller: 'ExpenseCtrl'
+  	controller: 'ViewSummeryCtrl'
   }).
   otherwise({
   	redirectTo: '/'
