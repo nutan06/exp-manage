@@ -8,7 +8,10 @@ angular.module('myApp.services', [])
 	"Education", 
 	"Fuel",
 	"Grocery",
-	"Entertainment"]);
+	"Entertainment"])
+.factory('expense', function($scope,$location){
+ 	$scope.data={expenses:[]};
+});
 
 
 
